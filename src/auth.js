@@ -16,7 +16,7 @@ export default {
     }).then(response => {
       if (response.status === 'SUCCESS') {
         return authClient.token.getWithoutPrompt({
-          clientId: `0oa616yz4kJWq7qrE5d6`,
+          clientId: `0oa617stnPlWXZkVP5d6`,
           responseType: ['id_token', 'token'],
           scopes: ['openid', 'email', 'profile'],
           sessionToken: response.sessionToken,
