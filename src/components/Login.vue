@@ -1,15 +1,17 @@
 <template>
-  <div>
-    <h1>Sign in</h1>
-    <h2>to continue to your custom Business Card</h2>
+  <div style="width: 24%;height: 325px;border: 2px solid #b7acac;; border-radius: 10px; padding-left: 1%;">
+    <h1 style="margin-left: 29%;color: #6c7277;">Sign in</h1>
+    <h6 style="color: #ababab;">to continue to your account</h6>
     <p v-if="$route.query.redirect">
       You need to login first.
     </p>
     <form @submit.prevent="login" autocomplete="off">
       <label><input v-model="email" placeholder="email" v-focus></label>
       <label><input v-model="pass" placeholder="password" type="password"></label><br>
-      <button type="submit">login</button>
+      <button width="19%" type="submit" class="btn btn-primary" id="btnSubmit" style="margin-bottom: 5%;">Next</button>
       <p v-if="error" class="error">Sorry, we could not find that account.</p>
+      <p><a href="/">Forgot email or password?</a></p>
+      <p><a href="/">Create account</a></p>
     </form>
   </div>
 </template>
@@ -44,5 +46,8 @@
 <style>
   .error {
     color: red;
+  }
+  #btnSubmit {
+    margin-left:70%;
   }
 </style>
