@@ -1,6 +1,7 @@
 <template>
   <div>
-    <h2>Login</h2>
+    <h1>Sign in</h1>
+    <h2>to continue to your custom Business Card</h2>
     <p v-if="$route.query.redirect">
       You need to login first.
     </p>
@@ -8,7 +9,7 @@
       <label><input v-model="email" placeholder="email" v-focus></label>
       <label><input v-model="pass" placeholder="password" type="password"></label><br>
       <button type="submit">login</button>
-      <p v-if="error" class="error">Bad login information</p>
+      <p v-if="error" class="error">Sorry, we could not find that account.</p>
     </form>
   </div>
 </template>
@@ -31,6 +32,9 @@
           } else {
             this.$router.replace(this.$route.query.redirect || '/')
           }
+        }).catch(err => {
+          console.error(err.message)
+          this.error = true
         })
       }
     }

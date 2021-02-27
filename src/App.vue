@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h1>Auth Flow</h1>
+    <h1>Welcome to Business Card LLC</h1>
     <ul>
       <li>
         <router-link v-if="loggedIn" to="/logout">Log out</router-link>
