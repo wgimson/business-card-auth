@@ -23,7 +23,7 @@
             <label for="inptUserPass">Password</label>
             <input v-model="pass" type="password" class="form-control" id="inptUserPass" placeholder="Password">
           </div>
-          <button width="19%" type="submit" class="btn btn-primary" id="btnSubmit" style="margin-bottom: 5%;">Next</button>
+          <button width="19%" type="submit" class="btn btn-primary" id="btnSubmit" style="margin-bottom: 5%;">Log In</button>
           <p v-if="error" class="error">Sorry, we could not find that account.</p>
           <p><a href="/">Forgot email or password?</a></p>
           <router-link to="/register">Create account</router-link>
