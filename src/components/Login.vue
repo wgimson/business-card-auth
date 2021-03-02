@@ -1,19 +1,40 @@
 <template>
-  <div style="width: 24%;height: 325px;border: 2px solid #b7acac;; border-radius: 10px; padding-left: 1%;">
-    <h1 style="margin-left: 29%;color: #6c7277;">Sign in</h1>
-    <h6 style="color: #ababab;">to continue to your account</h6>
-    <p v-if="$route.query.redirect">
-      You need to login first.
-    </p>
-    <form @submit.prevent="login" autocomplete="off">
-      <label><input v-model="email" placeholder="email" v-focus></label>
-      <label><input v-model="pass" placeholder="password" type="password"></label><br>
-      <button width="19%" type="submit" class="btn btn-primary" id="btnSubmit" style="margin-bottom: 5%;">Next</button>
-      <p v-if="error" class="error">Sorry, we could not find that account.</p>
-      <p><a href="/">Forgot email or password?</a></p>
-      <router-link to="/register">Create account</router-link>
-    </form>
+  <div class="container with-overflow">
+    <div class="row"></div>
+    <div class="row row-margin"
+         style="margin-top: 300px;"
+         align="center"
+         justify="center">
+
+      <div style="width: 30%;height: 48%;border: 2px solid #b7acac; border-radius: 10px; padding-left: 1%; margin-left: 35%;">
+      <div class="col-12">
+        <h1 style="color: #6c7277;">Sign in</h1>
+        <h6 style="color: #ababab;">to continue to your account</h6>
+        <p v-if="$route.query.redirect">
+          You need to login first.
+        </p>
+        <form @submit.prevent="login" autocomplete="off">
+          <div class="form-group">
+            <label for="inptUserEmail">Email address</label>
+            <input type="email" v-model="email" v-focus class="form-control" id="inptUserEmail" aria-describedby="emailHelp" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+          <div class="form-group">
+            <label for="inptUserPass">Password</label>
+            <input v-model="pass" type="password" class="form-control" id="inptUserPass" placeholder="Password">
+          </div>
+          <button width="19%" type="submit" class="btn btn-primary" id="btnSubmit" style="margin-bottom: 5%;">Next</button>
+          <p v-if="error" class="error">Sorry, we could not find that account.</p>
+          <p><a href="/">Forgot email or password?</a></p>
+          <router-link to="/register">Create account</router-link>
+        </form>
+      </div>
+    </div>
+    </div>
+    
+    <div class="row"></div>
   </div>
+  
 </template>
 
 <script>
@@ -43,9 +64,15 @@
   }
 </script>
 
-<style>
+<style scoped>
   .error {
     color: red;
+  }
+  .row-margin {
+    margin-top: 115%;
+  } 
+  .with-overflow {
+    overflow: hidden;
   }
   #btnSubmit {
     margin-left:70%;
