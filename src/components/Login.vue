@@ -11,7 +11,7 @@
       <button width="19%" type="submit" class="btn btn-primary" id="btnSubmit" style="margin-bottom: 5%;">Next</button>
       <p v-if="error" class="error">Sorry, we could not find that account.</p>
       <p><a href="/">Forgot email or password?</a></p>
-      <p><a href="/">Create account</a></p>
+      <router-link to="/register">Create account</router-link>
     </form>
   </div>
 </template>

@@ -4,6 +4,7 @@ import auth from '@/auth'
 import About from '@/components/About.vue'
 import Dashboard from '@/components/Dashboard.vue'
 import Login from '@/components/Login.vue'
+import Register from '@/components/Register.vue'
 
 Vue.use(Router)
 
@@ -14,6 +15,7 @@ export default new Router({
     { path: '/about', component: About },
     { path: '/dashboard', component: Dashboard, beforeEnter: requireAuth },
     { path: '/login', component: Login },
+    { path: '/register', component: Register },
     { path: '/logout',
       beforeEnter (to, from, next) {
         auth.logout()
