@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <p>Register</p>
+    <!-- blah blah push test -->
 
     <form id="frmRegister" 
           class="row"
